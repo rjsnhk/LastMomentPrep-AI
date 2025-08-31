@@ -29,7 +29,7 @@ const LandingPage = () => {
           {/*header*/}
           <header className="flex items-center justify-between mb-16">
             <div className="text-xl text-black font-bold">
-              Interview Prep Aii
+              LastMomentPrep AI
             </div>
             {user ? (<ProfileInfoCard />) : (<button className="bg-linear-to-r from-[#FF9324] to-[#e99a4b] text-sm font-semibold text-white px-7 py-2.5 rounded-full hover:bg-black hover:text-white border border-white transition-colors cursor-pointer" onClick={()=> setOpenAuthModal(true)}>
               Login/Signup

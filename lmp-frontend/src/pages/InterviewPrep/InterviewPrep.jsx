@@ -10,7 +10,6 @@ import { LuCircleAlert, LuListCollapse } from 'react-icons/lu';
 import AIResponcePreview from './components/AIResponcePreview';
 import Drawer from '../../components/Drawer';
 import SkeltonLoader from '../../components/Loader/SkeltonLoader';
-// import motion from 'framer-motion';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import SpinnerLoader from '../../components/Loader/SpinnerLoader';
@@ -131,11 +130,16 @@ const InterviewPrep = () => {
                   {
                     !loading && sessionData?.questions.length== idx+1 && (
                       <div className="flex items-center justify-center mt-5">
-                        <button className='flex items-center gap-3 text-sm text-white font-medium bg-black px-5 py-2 mr-2 rounded text-nowrap cursor-pointer' disabled={loading||isUpdateLoader} onClick={uploadMoreQuestions}>
-{isUpdateLoader ? (<SpinnerLoader />):(<LuListCollapse className='text-lg' />)}(" ")
-Load More
-                        </button>
-                      </div>
+  <button
+    className="flex items-center gap-3 text-sm text-white font-medium bg-black px-5 py-2 mr-2 rounded whitespace-nowrap cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+    disabled={loading || isUpdateLoader}
+    onClick={uploadMoreQuestions}
+  >
+    {isUpdateLoader ? <SpinnerLoader /> : <LuListCollapse className="text-lg" />}
+    Load More
+  </button>
+</div>
+
                     )
                   }
                   </>
